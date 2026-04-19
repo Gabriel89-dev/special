@@ -90,7 +90,7 @@ export default function Home() {
     <div 
       className="relative"
       style={{
-        backgroundImage: 'url("/images/princess.jpg")',
+        backgroundImage: 'url("/images/Princess.jpg")',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
