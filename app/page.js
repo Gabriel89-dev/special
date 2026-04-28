@@ -8,6 +8,47 @@ export default function Home() {
   const [showMessage, setShowMessage] = useState(false);
   const [floatingHearts, setFloatingHearts] = useState([]);
   const audioRef = useRef(null);
+    const [youtubePlayer, setYoutubePlayer] = useState(null);
+
+     // Auto play YouTube when page loads
+  useEffect(() => {
+    // Load YouTube API
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    window.onYouTubeIframeAPIReady = () => {
+      const player = new window.YT.Player('youtube-auto-player', {
+        height: '0',
+        width: '0',
+        videoId: 'izVwViYWJso?si=OeiyrNM0WV6MSlh2', // ID video YouTube
+        playerVars: {
+          'autoplay': 1,
+          'loop': 1,
+          'controls': 0,
+          'disablekb': 1,
+          'modestbranding': 1,
+          'rel': 0,
+          'showinfo': 0
+            
+        },
+        events: {
+          onReady: (event) => {
+            event.target.playVideo();
+          },
+          onStateChange: (event) => {
+            if (event.data === window.YT.PlayerState.ENDED) {
+              event.target.playVideo(); // Loop
+            }
+          }
+        }
+      });
+      setYoutubePlayer(player);
+    };
+  }, []);
+
+  
 
   // Floating hearts effect
   useEffect(() => {
@@ -326,6 +367,7 @@ export default function Home() {
                     <p>Di hari spesial ini, aku berdoa semoga semua impian sayaang bisa dicapaii dann, jangan lupa berdoa oteyyy.kita harus andaliin tuhan dalam setiap langkah kita ya sayaang.</p>
                     <div className="bg-red-50 rounded-xl p-6 my-6">
                       <p className="text-red-600 text-xl italic">"I thank my God every time I remember you."</p>
+                      <p className="text-red-600 text-xl italic">Philippians 1:3</p>
                     </div>
                     <p className="font-bold text-red-600 text-xl mt-6">I Love You Forever! 💕</p>
                     <p className="mt-4 text-gray-500">- iel -</p>
