@@ -320,7 +320,7 @@ export default function Home() {
         
         <div className="space-y-3 text-gray-600">
           <p>Sayang,</p>
-          <p>this song always reminds me of you, and I’ve come to love this song because of you. and You’re truly so special to me. I’m the luckiest person to have met you. I’m so grateful to be your girlfriend; I’ve learned so much. And lastly, you’re sooo beautiful, I swear! I want to tell Mom, “Thank you for sending down an angel like youuuu.</p>
+          <p>this song always reminds me of you, and I’ve come to love this song because of you. and You’re truly so special to me. I’m the luckiest person to have met you. I’m so grateful to be your boyfriend; I’ve learned so much. And lastly, you’re sooo beautiful, I swear! I want to tell Mom, “Thank you for sending down an angel like youuuu.</p>
           <div className="bg-pink-50 p-3 rounded-lg my-3">
             <p className="text-red-500 italic text-center text-sm">"You are my favorite singer"</p>
           </div>
